@@ -1,0 +1,26 @@
+﻿  Source.cpp
+  SosnowskyBorsch.cpp
+  Generating Code...
+  Compiling...
+  World.cpp
+  Wolfberry.cpp
+  Wolf.cpp
+  Turtle.cpp
+  SowThistle.cpp
+  Sheep.cpp
+  Plant.cpp
+  Organism.cpp
+  Human.cpp
+  Guarana.cpp
+  Grass.cpp
+  Fox.cpp
+  CyberSheep.cpp
+  Antelope.cpp
+  Animal.cpp
+  Generating Code...
+c:\users\mateusz\documents\visual studio 2015\projects\platformgame\platformgame\animal.cpp(57): warning C4715: 'Animal::isPushBackAttack': not all control paths return a value
+c:\users\mateusz\documents\visual studio 2015\projects\platformgame\platformgame\world.cpp(85): warning C4172: returning address of local variable or temporary: tab
+  Skipping... (no relevant changes detected)
+  Grid.cpp
+  PlatformGame.vcxproj -> C:\Users\Mateusz\documents\visual studio 2015\Projects\PlatformGame\Debug\PlatformGame.exe
+  PlatformGame.vcxproj -> C:\Users\Mateusz\documents\visual studio 2015\Projects\PlatformGame\Debug\PlatformGame.pdb (Full PDB)
