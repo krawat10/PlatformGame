@@ -9,12 +9,8 @@ public:
 	Fox(int x, int y, World * world);
 	Fox(World * world);
 	void action();
-	void Multiplication();
-	~Fox();
-	
-
 private:
-
+	void Multiplication();
 };
 
 #endif // !FOX_H

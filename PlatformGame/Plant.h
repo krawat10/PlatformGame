@@ -11,11 +11,9 @@ class Plant:public Organism
 public:
 	Plant(int x, int y, World* world);
 	Plant(World* world);
-	~Plant();
 	virtual void action();
-	virtual void Multiplication() = 0;
 private:
-
+	virtual void Multiplication() = 0;
 };
 
 #endif // !PLANT_H

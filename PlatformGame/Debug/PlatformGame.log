@@ -1,25 +1,29 @@
-﻿  Source.cpp
-  SosnowskyBorsch.cpp
+﻿  Animal.cpp
   Generating Code...
+c:\users\mateusz\documents\visual studio 2015\projects\platformgame\platformgame\animal.cpp(54): warning C4715: 'Animal::isPushBackAttack': not all control paths return a value
   Compiling...
   World.cpp
   Wolfberry.cpp
   Wolf.cpp
   Turtle.cpp
   SowThistle.cpp
+  Source.cpp
+  SosnowskyBorsch.cpp
   Sheep.cpp
-  Plant.cpp
   Organism.cpp
   Human.cpp
   Guarana.cpp
   Grass.cpp
   Fox.cpp
   CyberSheep.cpp
+c:\users\mateusz\documents\visual studio 2015\projects\platformgame\platformgame\cybersheep.cpp(47): warning C4018: '<': signed/unsigned mismatch
+c:\users\mateusz\documents\visual studio 2015\projects\platformgame\platformgame\cybersheep.cpp(45): warning C4101: 'currentDirectionY': unreferenced local variable
+c:\users\mateusz\documents\visual studio 2015\projects\platformgame\platformgame\cybersheep.cpp(43): warning C4101: 'currentDistanceToBorsch': unreferenced local variable
+c:\users\mateusz\documents\visual studio 2015\projects\platformgame\platformgame\cybersheep.cpp(44): warning C4101: 'currentDirectionX': unreferenced local variable
   Antelope.cpp
-  Animal.cpp
   Generating Code...
-c:\users\mateusz\documents\visual studio 2015\projects\platformgame\platformgame\animal.cpp(57): warning C4715: 'Animal::isPushBackAttack': not all control paths return a value
-c:\users\mateusz\documents\visual studio 2015\projects\platformgame\platformgame\world.cpp(85): warning C4172: returning address of local variable or temporary: tab
+c:\users\mateusz\documents\visual studio 2015\projects\platformgame\platformgame\antelope.cpp(58): warning C4715: 'Antelope::isPushBackAttack': not all control paths return a value
+c:\users\mateusz\documents\visual studio 2015\projects\platformgame\platformgame\world.cpp(126): warning C4172: returning address of local variable or temporary: tab
   Skipping... (no relevant changes detected)
   Grid.cpp
   PlatformGame.vcxproj -> C:\Users\Mateusz\documents\visual studio 2015\Projects\PlatformGame\Debug\PlatformGame.exe

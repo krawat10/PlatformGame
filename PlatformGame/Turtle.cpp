@@ -23,8 +23,9 @@ Turtle::Turtle(World * world) :Animal(world)
 
 void Turtle::Multiplication()
 {
+	int i = 8;
 	bool isMoved = false;
-	while (!isMoved)
+	while (!isMoved && (i-- != 0))
 	{
 		int* newXY = this->newRandomPositionAround();
 		if (this->world->checkPosition(newXY[0], newXY[1]) == 'o')
@@ -39,7 +40,7 @@ bool Turtle::isPushBackAttack(Organism* attacker)
 {
 	if (attacker->getStrength() >= 5)
 	{
-		this->isAlive = false;
+		this->setIsAlive(false);
 		return false;
 	}
 	else if (attacker->getName() == this->name)

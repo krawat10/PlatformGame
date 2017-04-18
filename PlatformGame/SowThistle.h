@@ -10,11 +10,8 @@ public:
 
 	SowThistle(int x, int y, World * world);
 	SowThistle(World * world);
-	~SowThistle();
-	void collision();
-	void Multiplication();
-	void draw();
+	void action();
 private:
-
+	void Multiplication();
 };
 #endif // !SOWTHISTLE_H

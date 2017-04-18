@@ -9,11 +9,12 @@ class Human : public Animal
 public:
 	Human(int x, int y, World* world);
 	Human(World* world);
-	void Multiplication();
-	~Human();
-	void action(char direcrion);
+	bool isPushBackAttack(Organism * attacker);
+	void action();
 private:
-
+	void Multiplication();
+	int AlzureShieldTour;
+	bool AlzureShield;
 };
 
 

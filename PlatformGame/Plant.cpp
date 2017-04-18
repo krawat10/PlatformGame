@@ -12,13 +12,10 @@ Plant::Plant(World * world):Organism(world)
 	this->initative = 0;
 }
 
-Plant::~Plant()
-{
-}
 
 void Plant::action()
 {
-	int random = rand() % 4;
+	int random = rand() % 8;
 	if (random == 0)
 	{
 		Multiplication();

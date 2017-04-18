@@ -1,0 +1,1 @@
+15 15 20 Grass 0 4 1 Guarana 0 7 7 SowThistle 0 11 3 Wolfberry 99 2 4 Wolfberry 99 2 5 Wolfberry 99 1 6 SowThistle 0 10 3 Grass 0 5 1 SowThistle 0 10 2 SowThistle 0 12 4 Wolfberry 99 0 5 Turtle 2 2 11 Antelope 2 9 0 CyberSheep 2 8 11 Human 5 13 9 Sheep 4 5 2 Wolf 9 2 1 Fox 3 6 13 SowThistle 0 12 5 Wolfberry 99 2 6 

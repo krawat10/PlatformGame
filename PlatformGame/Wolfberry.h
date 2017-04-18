@@ -9,12 +9,9 @@ public:
 
 	Wolfberry(int x, int y, World * world);
 	Wolfberry(World * world);
-	~Wolfberry();
-	void collision();
-	void Multiplication();
-	void draw();
+	bool isPushBackAttack(Organism * attacker);
 private:
-
+	void Multiplication();
 };
 
 #endif // !WOLFBERRY_H

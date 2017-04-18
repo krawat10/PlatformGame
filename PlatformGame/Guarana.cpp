@@ -4,7 +4,7 @@
 Guarana::Guarana(int x, int y, World* world) :Plant(x, y, world)
 {
 	this->name = "Guarana";
-	this->symbol = '^';
+	this->symbol = '+';
 	this->world->getGrid()->setObject(x, y, this->symbol);
 
 }
@@ -13,30 +13,25 @@ bool Guarana::isPushBackAttack(Organism* attacker)
 {
 	int newStrength = attacker->getStrength() + 3;
 	attacker->setStrength(newStrength);
-	this->isAlive = false;
+	this->setIsAlive(false);
 	return false;
-
 }
 
 Guarana::Guarana(World * world) :Plant(world)
 {
 	this->name = "Guarana";
-	this->symbol = '^';
+	this->symbol = '+';
 	this->world->getGrid()->setObject(x, y, this->symbol);
 }
 
-Guarana::~Guarana()
-{
-}
 
-void Guarana::collision()
-{
-}
+
 
 void Guarana::Multiplication()
 {
+	int i = 8;
 	bool isNewSpot = false;
-	while (!isNewSpot)
+	while (!isNewSpot && (i-- != 0))
 	{
 		int* newXY = this->newRandomPositionAround();
 		if (this->world->checkPosition(newXY[0], newXY[1]) == 'o')
@@ -45,8 +40,4 @@ void Guarana::Multiplication()
 			isNewSpot = true;
 		}
 	}
-}
-
-void Guarana::draw()
-{
 }

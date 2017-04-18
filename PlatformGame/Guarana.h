@@ -10,12 +10,8 @@ public:
 	Guarana(int x, int y, World * world);
 	bool isPushBackAttack(Organism * attacker);
 	Guarana(World * world);
-	~Guarana();
-	void collision();
-	void Multiplication();
-	void draw();
 private:
-
+	void Multiplication();
 };
 
 #endif // !GUARANA_H

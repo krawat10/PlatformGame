@@ -8,12 +8,10 @@ class Antelope :public Animal
 public:
 	Antelope(int x, int y, World * world);
 	Antelope(World * world);
-	bool isPushBackAttack(Organism * attacker);
-	void Multiplication();
-	void action();
-	~Antelope();
+	bool isPushBackAttack(Organism * attacker);	
+	void action();	
 private:
-
+	void Multiplication();
 };
 #endif // !ANTELOPE_H
 

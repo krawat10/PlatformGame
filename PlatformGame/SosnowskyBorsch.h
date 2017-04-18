@@ -9,13 +9,10 @@ public:
 
 	SosnowskyBorsch(int x, int y, World * world);
 	SosnowskyBorsch(World * world);
-	~SosnowskyBorsch();
 	void action();
-	void Multiplication();
 	bool isPushBackAttack(Organism * attacker);
-	void draw();
 private:
-
+	void Multiplication();
 };
 
 #endif // !SOSNOWSKYBORSCH_H

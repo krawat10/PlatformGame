@@ -22,25 +22,43 @@ Antelope::Antelope(World * world) :Animal(world)
 
 bool Antelope::isPushBackAttack(Organism* attacker)
 {
+	int random = rand() % 2;
 	if (attacker->getName() == this->name)
 	{
 		Multiplication();
 		return false;
 	}
-	else if (attacker->getStrength() >= this->getStrength())
-	{
-		this->isAlive = false;
-		return false;
-	}	
+	else if (random == 0)
+	{		
+		if (attacker->getStrength() >= this->getStrength())
+		{
+			this->setIsAlive(false);
+			return false;
+		}
+		else
+		{
+			attacker->setIsAlive(false);
+			return true;
+		}
+	}
 	else
 	{
-		attacker->setIsAlive(false);
-		return true;
+		int i = 8;
+		bool isMoved = false;
+		while (!isMoved && (i-- != 0))
+		{
+			int* newXY = this->newRandomPositionAround();
+			if (this->world->checkPosition(newXY[0], newXY[1]) == 'o')
+			{
+				this->draw(newXY[0], newXY[1]);
+				isMoved = true;
+			}
+		}
 	}
 }
 
 void Antelope::Multiplication()
-{	
+{
 	bool isMoved = false;
 	while (!isMoved)
 	{
@@ -50,7 +68,7 @@ void Antelope::Multiplication()
 			this->world->addCreature(new Antelope(newXY[0], newXY[1], this->world));
 			isMoved = true;
 		}
-	}	
+	}
 }
 
 void Antelope::action()
@@ -78,5 +96,5 @@ void Antelope::action()
 					return;
 			}
 		}
-	}	
+	}
 }

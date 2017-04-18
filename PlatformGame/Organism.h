@@ -12,8 +12,7 @@ class World;
 class Organism
 {
 public:
-	Organism(int x, int y, World* world);
-	
+	Organism(int x, int y, World* world);	
 	Organism(World* world);
 	~Organism();
 	int getStrength();
@@ -29,9 +28,9 @@ public:
 	virtual void action() = 0;
 	static bool compareTwoOrganismPointers(Organism* a, Organism* b);
 	virtual bool isPushBackAttack(Organism * attacker);
-protected:
-	int * newRandomPositionAround();
 	void draw(int x, int y);
+protected:
+	int * newRandomPositionAround();	
 	bool isAlive;
 	World* world;
 	int strength;

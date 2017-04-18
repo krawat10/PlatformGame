@@ -2,10 +2,11 @@
 #include "Human.h"
 #include "World.h"
 #include "Animal.h"
-#define LEFT 'a'
-#define RIGHT 'd'
-#define UP 's'
-#define DOWN 'w'
+#define LEFT 75
+#define RIGHT 77
+#define UP 80
+#define DOWN 72
+#define SHIELD 'p'
 
 
 Human::Human(int x, int y, World* world) :Animal(x, y, world)
@@ -19,6 +20,8 @@ Human::Human(int x, int y, World* world) :Animal(x, y, world)
 
 Human::Human(World * world) :Animal(world)
 {
+	this->AlzureShield = false;
+	this->AlzureShieldTour = 0;
 	this->name = "Human";
 	this->initative = 4;
 	this->strength = 5;
@@ -30,14 +33,46 @@ void Human::Multiplication()
 {
 }
 
-Human::~Human()
+bool Human::isPushBackAttack(Organism* attacker)
 {
+	if (this->AlzureShield)
+	{
+		int i = 8;
+		bool isNewSpot = false;
+		while (!isNewSpot && (i-- != 0))
+		{
+			int* newXY = this->newRandomPositionAround();
+			if (this->world->checkPosition(newXY[0], newXY[1]) == 'o')
+			{				
+				attacker->draw(newXY[0], newXY[1]);
+				isNewSpot = true;
+			}
+		}		
+		return true;
+	}
+	else if (attacker->getStrength() >= this->getStrength())
+	{
+		this->setIsAlive(false);
+		return false;
+	}
+	else
+	{
+		attacker->setIsAlive(false);
+		return true;
+	}
 }
 
-void Human::action(char direcrion)
+void Human::action()
 {
+	char direcrion = this->world->getImput();
 	int newX;
 	int newY;
+	this->AlzureShieldTour--;
+	if ((this->AlzureShieldTour == 0) && this->AlzureShield)
+	{
+		this->AlzureShield = false;
+		this->world->getGrid()->setNewMessage("Alzure Shield deactivated.");
+	}
 
 	switch (direcrion)
 	{
@@ -64,6 +99,15 @@ void Human::action(char direcrion)
 		newX = this->x + 1;
 		newY = this->y;
 		break;
+	}
+	case SHIELD:
+	{
+		if (this->AlzureShieldTour <= -5)
+		{
+			this->AlzureShield = true;
+			this->AlzureShieldTour = 5;
+			this->world->getGrid()->setNewMessage("Azure shield activated!");
+		}		
 	}
 	default:
 		return;

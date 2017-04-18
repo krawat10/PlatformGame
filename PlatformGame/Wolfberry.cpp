@@ -18,18 +18,11 @@ Wolfberry::Wolfberry(World * world) :Plant(world)
 	this->world->getGrid()->setObject(x, y, this->symbol);
 }
 
-Wolfberry::~Wolfberry()
-{
-}
-
-void Wolfberry::collision()
-{
-}
-
 void Wolfberry::Multiplication()
 {
+	int i = 8;
 	bool isNewSpot = false;
-	while (!isNewSpot)
+	while (!isNewSpot && (i-- != 0))
 	{
 		int* newXY = this->newRandomPositionAround();
 		if (this->world->checkPosition(newXY[0], newXY[1]) == 'o')
@@ -40,6 +33,9 @@ void Wolfberry::Multiplication()
 	}
 }
 
-void Wolfberry::draw()
+bool Wolfberry::isPushBackAttack(Organism* attacker)
 {
+		this->setIsAlive(false);
+		attacker->setIsAlive(false);
+		return true;
 }

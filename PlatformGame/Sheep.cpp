@@ -21,8 +21,9 @@ Sheep::Sheep(World * world) :Animal(world)
 }
 void Sheep::Multiplication()
 {
+	int i = 8;
 	bool isMoved = false;
-	while (!isMoved)
+	while (!isMoved && (i-- != 0))
 	{
 		int* newXY = this->newRandomPositionAround();
 		if (this->world->checkPosition(newXY[0], newXY[1]) == 'o')
@@ -31,8 +32,4 @@ void Sheep::Multiplication()
 			isMoved = true;
 		}
 	}
-}
-
-void Sheep::draw()
-{
 }

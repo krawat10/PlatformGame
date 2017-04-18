@@ -1,47 +1,36 @@
 #include "Grass.h"
 #include "World.h"
 
-Grass::Grass(int x, int y, World* world):Plant(x, y, world)
+Grass::Grass(int x, int y, World* world) :Plant(x, y, world)
 {
 	this->name = "Grass";
 	this->symbol = '#';
 	this->world->getGrid()->setObject(x, y, this->symbol);
-	
+
 }
 
-Grass::Grass(World * world):Plant(world)
+Grass::Grass(World * world) :Plant(world)
 {
 	this->name = "Grass";
 	this->symbol = '#';
 	this->world->getGrid()->setObject(x, y, this->symbol);
 }
 
-Grass::~Grass()
-{
-}
 
-void Grass::collision()
-{
-}
 
 void Grass::Multiplication()
-{	
-		bool isNewSpot = false;
-		while (!isNewSpot)
-		{
-			int* newXY = this->newRandomPositionAround();
-			if (this->world->checkPosition(newXY[0], newXY[1]) == 'o')
-			{
-				this->world->addCreature(new Grass(newXY[0], newXY[1], this->world));
-				isNewSpot = true;
-			}
-		}	
-}
-
-void Grass::draw()
 {
+	int i = 8;
+	bool isNewSpot = false;
+	while (!isNewSpot && (i-- != 0))
+	{
+		int* newXY = this->newRandomPositionAround();
+		if (this->world->checkPosition(newXY[0], newXY[1]) == 'o')
+		{
+			this->world->addCreature(new Grass(newXY[0], newXY[1], this->world));
+			isNewSpot = true;
+		}
+	}
 }
 
-//Grass::~Grass()
-//{
-//}
+

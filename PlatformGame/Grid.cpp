@@ -1,9 +1,8 @@
 #pragma once
-#include <iostream>
-#include <array>
-#include <stdexcept>
 #include <stdlib.h>
 #include "Grid.h"
+#include <iostream>
+
 using namespace std;
 
 bool Grid::isInstance = false;
@@ -28,6 +27,10 @@ Grid::Grid(int sizeX, int sizeY)
 		}
 		refreshScreen();
 		isInstance = true;
+		string word = "*************";
+		messages.push_back(word);
+		messages.push_back(word);
+		messages.push_back(word);
 	}
 	//
 	//Throw exception when we try to create next instance of Grid class.
@@ -61,6 +64,33 @@ void Grid::refreshScreen()
 	}
 	for (int j = 0; j < this->sizeX+2; j++)
 		cout << '~';
+	cout << endl;
+	for (int i = 0; i < messages.size(); i++)
+	{
+		cout << messages[i] << endl;
+	}
+}
+
+void Grid::clearScreen()
+{
+	for (int i = 0; i < this->sizeY; i++)
+	{		
+		for (int j = 0; j < this->sizeX; j++)
+		{
+			screen[i][j] = '.';
+		}	
+	}
+	string word = "*************";
+	for (int i = 0; i < 3; i++)
+	{
+		messages[i] = word;
+	}
+}
+
+void Grid::setNewSize(int x, int y)
+{
+	this->sizeX = x;
+	this->sizeY = y;
 }
 
 void Grid::setObject(int x, int y)
@@ -78,6 +108,14 @@ void Grid::setObject(int x, int y, char symbol)
 void Grid::deleteObject(int x, int y)
 {
 	screen[y][x] = '.';
+	refreshScreen();
+}
+
+void Grid::setNewMessage(std::string message)
+{
+	messages[2] = messages[1];
+	messages[1] = messages[0];
+	messages[0] = message;
 	refreshScreen();
 }
 

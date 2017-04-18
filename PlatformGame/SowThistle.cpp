@@ -16,18 +16,24 @@ SowThistle::SowThistle(World * world) :Plant(world)
 	this->world->getGrid()->setObject(x, y, this->symbol);
 }
 
-SowThistle::~SowThistle()
+void SowThistle::action()
 {
-}
-
-void SowThistle::collision()
-{
+	int random;
+	for (int i = 0; i < 3; i++)
+	{
+		random = rand() % 8;
+		if (random == 0)
+		{
+			Multiplication();
+		}
+	}	
 }
 
 void SowThistle::Multiplication()
 {
+	int i = 8;
 	bool isNewSpot = false;
-	while (!isNewSpot)
+	while (!isNewSpot && (i-- != 0))
 	{
 		int* newXY = this->newRandomPositionAround();
 		if (this->world->checkPosition(newXY[0], newXY[1]) == 'o')
@@ -36,8 +42,4 @@ void SowThistle::Multiplication()
 			isNewSpot = true;
 		}
 	}
-}
-
-void SowThistle::draw()
-{
 }

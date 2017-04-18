@@ -50,6 +50,11 @@ void Organism::setY(int y)
 void Organism::setIsAlive(bool status)
 {
 	this->isAlive = status;
+	if (!status)
+	{
+		this->world->getGrid()->setNewMessage(this->getName() + " is dead.");
+		this->world->getGrid()->deleteObject(this->x, this->y);
+	}
 }
 
 bool Organism::compareTwoOrganismPointers(Organism * a, Organism * b)
@@ -69,7 +74,7 @@ bool Organism::isPushBackAttack(Organism* attacker)
 {
 	if (attacker->getStrength() >= this->getStrength())
 	{
-		this->isAlive = false;
+		this->setIsAlive(false);
 		return false;
 	}
 	else
@@ -162,6 +167,7 @@ Organism::Organism(World * world)
 
 Organism::~Organism()
 {
-	this->world->setNumberoOfCreatures(this->world->getNumberOfCreatures() - 1);
+	int newNumber = this->world->getNumberOfCreatures() - 1;
+	this->world->setNumberoOfCreatures(newNumber);
 	this->world->getGrid()->deleteObject(this->x, this->y);
 }

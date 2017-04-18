@@ -176,6 +176,7 @@
     <ClInclude Include="Human.h" />
     <ClInclude Include="Organism.h" />
     <ClInclude Include="Plant.h" />
+    <ClInclude Include="Serializable.h" />
     <ClInclude Include="Sheep.h" />
     <ClInclude Include="SosnowskyBorsch.h" />
     <ClInclude Include="SowThistle.h" />

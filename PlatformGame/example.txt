@@ -1,0 +1,1 @@
+15 15 12 Wolf 9 1 1 Grass 0 4 1 Human 5 14 4 Fox 3 7 14 Turtle 2 1 12 Antelope 2 10 2 CyberSheep 2 6 9 Guarana 0 7 7 Sheep 4 8 5 SowThistle 0 11 3 Wolfberry 99 2 4 SosnowskyBorsch 10 8 6 

@@ -1,16 +1,13 @@
 #pragma once
 #include "Animal.h"
 #include "World.h"
-#include "Grid.h"
+
 #include <cstdlib>
 Animal::Animal(int x, int y, World * world):Organism(x, y, world)
 {
 
 }
 Animal::Animal(World * world):Organism(world)
-{
-}
-Animal::~Animal()
 {
 }
 
@@ -46,11 +43,11 @@ bool Animal::isPushBackAttack(Organism* attacker)
 	}
 	else if (attacker->getStrength() >= this->getStrength())
 	{
-		this->isAlive = false;
+		this->setIsAlive(false);
 		return false;
 	}
 	else 
-	{
+	{		
 		attacker->setIsAlive(false);
 		return true;
 	}
@@ -61,6 +58,3 @@ bool Animal::attack(int enemyX, int enemyY)
 	return this->world->attackMonsterAtPosition(enemyX, enemyY, this);
 }
 
-void Animal::collision()
-{
-}

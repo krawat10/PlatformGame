@@ -6,16 +6,11 @@ class Plant;
 
 class Grass:public Plant
 {
-public:
-	
+public:	
 	Grass(int x, int y, World * world);
-	Grass(World * world);
-	~Grass();
-	void collision();
-	void Multiplication();
-	void draw();
+	Grass(World * world);		
 private:
-
+	void Multiplication();	
 };
 
 
